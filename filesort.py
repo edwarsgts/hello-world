@@ -10,7 +10,7 @@ def move_file(raw_path, target_path):
 def ensure_dir(directory):
     os.makedirs(directory, exist_ok=True)
 
-
+# creates the directory if it is not present and moves the file to the said directory.
 def makedir_movetodir(raw_path, target_path):
     ensure_dir(target_path)
     move_file(raw_path, target_path)
@@ -24,6 +24,9 @@ class FileDetails:
 
 source_path = 'C:/Users/' + os.getlogin() + '/Downloads'
 source_files = os.listdir(source_path)
+
+
+# add your own file category and file extensions below
 
 med = FileDetails("Media", ('.HEIC', '.mp4', '.jpg', '.JPG', '.MOV', '.jpeg', '.png'))
 doc = FileDetails('Documents', ('.xlsx', '.docx', '.pdf', '.txt', '.xls'))
